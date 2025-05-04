@@ -16,4 +16,7 @@ void PWM1A(uint8_t invertido, uint16_t presc); //cambiar nombres
 void updateDutyCycle1(uint16_t duty); // duty entre 0 y ICR1 
 //cambiar nombres
 
+void PWM1B(uint8_t invertido);
+void updateDutyCycle1B(uint16_t duty);
+
 #endif /* PWMTIMER1_H_ */

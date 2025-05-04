@@ -54,3 +54,24 @@ void updateDutyCycle2(uint8_t duty2) //cambiar nombres
 {
 	OCR2A = duty2;
 }
+
+void PWM2B(uint8_t invertido2)
+{
+	DDRD |= (1 << DDD3); // OC2B como salida
+
+	TCCR2A &= ~((1 << COM2B1) | (1 << COM2B0)); // limpiar configuración previa
+
+	if (invertido2 == invt2)
+	{
+		TCCR2A |= (1 << COM2B1) | (1 << COM2B0); // modo invertido
+	}
+	else
+	{
+		TCCR2A |= (1 << COM2B1); // modo no invertido
+	}
+}
+
+void updateDutyCycle2B(uint8_t duty2)
+{
+	OCR2B = duty2;
+}

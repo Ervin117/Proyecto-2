@@ -53,3 +53,25 @@ void updateDutyCycle1(uint16_t duty) //cambiar nombres
 {
 	OCR1A = duty;
 }
+
+void PWM1B(uint8_t invertido)
+{
+	DDRB |= (1 << DDB2); // OC1B como salida
+	
+	TCCR1A &= ~((1 << COM1B1) | (1 << COM1B0)); // limpiar bits previos
+
+	if (invertido == invt)
+	{
+		TCCR1A |= (1 << COM1B1) | (1 << COM1B0); // modo invertido
+	}
+	else
+	{
+		TCCR1A |= (1 << COM1B1); // modo no invertido
+	}
+}
+
+// NUEVA FUNCIÓN: actualizar OCR1B
+void updateDutyCycle1B(uint16_t duty)
+{
+	OCR1B = duty;
+}
