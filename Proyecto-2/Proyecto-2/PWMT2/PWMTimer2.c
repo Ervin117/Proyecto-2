@@ -6,7 +6,7 @@
  */ 
 
 #include "PWMTimer2.h"
-void PWM2A(uint8_t invertido2, uint16_t presc2) //cambiar nombres
+void Servo4(uint8_t invertido2, uint16_t presc2) //cambiar nombres
 {
 	DDRB |=(1<< DDB3);
 
@@ -50,12 +50,12 @@ void PWM2A(uint8_t invertido2, uint16_t presc2) //cambiar nombres
 		break;
 	}
 }
-void updateDutyCycle2(uint8_t duty2) //cambiar nombres
+void updateDutyCycle_servo4(uint8_t duty2) //cambiar nombres
 {
 	OCR2A = duty2;
 }
 
-void PWM2B(uint8_t invertido2)
+void Servo5(uint8_t invertido2)
 {
 	DDRD |= (1 << DDD3); // OC2B como salida
 
@@ -71,7 +71,7 @@ void PWM2B(uint8_t invertido2)
 	}
 }
 
-void updateDutyCycle2B(uint8_t duty2)
+void updateDutyCycle_servo5(uint8_t duty2)
 {
 	OCR2B = duty2;
 }

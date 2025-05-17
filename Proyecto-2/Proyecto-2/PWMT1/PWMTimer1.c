@@ -6,7 +6,7 @@
  */ 
 
 #include "PWMTimer1.h"
-void PWM1A(uint8_t invertido, uint16_t presc) //cambiar nombres
+void Servo2(uint8_t invertido, uint16_t presc) //cambiar nombres
 {
 	DDRB |= (1 << DDB1); // OC1A como salida
 
@@ -25,7 +25,7 @@ void PWM1A(uint8_t invertido, uint16_t presc) //cambiar nombres
 	TCCR1A |= (1 << WGM11);
 	TCCR1B |= (1 << WGM13) | (1 << WGM12);
 
-	ICR1 = 312;//19999;
+	ICR1 = 65000;//19999;
 
 	switch (presc)
 	{
@@ -49,12 +49,12 @@ void PWM1A(uint8_t invertido, uint16_t presc) //cambiar nombres
 		break;
 	}
 }
-void updateDutyCycle1(uint16_t duty) //cambiar nombres
+void updateDutyCycle_servo2(uint16_t duty) //cambiar nombres
 {
 	OCR1A = duty;
 }
 
-void PWM1B(uint8_t invertido)
+void Servo3(uint8_t invertido)
 {
 	DDRB |= (1 << DDB2); // OC1B como salida
 	
@@ -71,7 +71,7 @@ void PWM1B(uint8_t invertido)
 }
 
 // NUEVA FUNCIÓN: actualizar OCR1B
-void updateDutyCycle1B(uint16_t duty)
+void updateDutyCycle_servo3(uint16_t duty1)
 {
-	OCR1B = duty;
+	OCR1B = duty1;
 }

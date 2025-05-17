@@ -12,11 +12,10 @@
 #define invt 1
 #define no_invt 0
 
-void PWM1A(uint8_t invertido, uint16_t presc); //cambiar nombres
-void updateDutyCycle1(uint16_t duty); // duty entre 0 y ICR1 
-//cambiar nombres
+void Servo2(uint8_t invertido, uint16_t presc);
+void updateDutyCycle_servo2(uint16_t duty); 
 
-void PWM1B(uint8_t invertido);
-void updateDutyCycle1B(uint16_t duty);
+void Servo3(uint8_t invertido);
+void updateDutyCycle_servo3(uint16_t duty1);
 
 #endif /* PWMTIMER1_H_ */

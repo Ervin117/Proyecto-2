@@ -133,6 +133,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EEPROM\UART_eeprom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="EEPROM\UART_eeprom.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -156,6 +162,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="EEPROM" />
     <Folder Include="PWMT2" />
     <Folder Include="PWMT1" />
     <Folder Include="PWMT0" />

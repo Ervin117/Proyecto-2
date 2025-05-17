@@ -12,7 +12,7 @@
 #include <avr/io.h>
 #define invt 1
 #define no_invt 0
-void PWM0A(uint8_t invertido, uint16_t presc); //cambiar nombres
-void updateDutyCycle(uint8_t duty0); //cambiar nombres
+void Servo1(uint8_t invertido, uint16_t presc);
+void updateDutyCycle_servo1(uint8_t duty0); 
 
 #endif /* PWMTIMER0_H_ */
