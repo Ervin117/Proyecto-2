@@ -2,7 +2,6 @@
 import sys
 import time
 import serial
-import os
 
 # This example uses the MQTTClient instead of the REST client
 from Adafruit_IO import MQTTClient
@@ -14,8 +13,8 @@ run_count = 0
 # Set to your Adafruit IO username and key.
 # Remember, your key is a secret,
 # so make sure not to publish it when you publish this code!
-ADAFRUIT_IO_USERNAME = os.getenv("")
-ADAFRUIT_IO_KEY = os.getenv("")
+ADAFRUIT_IO_USERNAME = " "
+ADAFRUIT_IO_KEY = " "
 
 # Set to the ID of the feed to subscribe to for updates.
 FEED_ID_MODOS_Entregar = 'Modos TX'
