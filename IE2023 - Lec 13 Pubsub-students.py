@@ -13,8 +13,8 @@ run_count = 0
 # Set to your Adafruit IO username and key.
 # Remember, your key is a secret,
 # so make sure not to publish it when you publish this code!
-ADAFRUIT_IO_USERNAME = "EG3"
-ADAFRUIT_IO_KEY = "aio_IlSk43OGDoxgODj5ogHpzY6aIVij"
+ADAFRUIT_IO_USERNAME = ""
+ADAFRUIT_IO_KEY = ""
 
 # Set to the ID of the feed to subscribe to for updates.
 FEED_ID_MODOS_Entregar = 'Modos TX'
