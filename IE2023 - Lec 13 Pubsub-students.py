@@ -98,7 +98,7 @@ def message(client, feed_id, payload):
     #print('Sendind data back: {0}'.format(payload))
     #client.publish(FEED_ID_Send, payload)
 
-com_arduino = serial.Serial(port = 'COM3', baudrate=57600, timeout=0.1)
+com_arduino = serial.Serial(port = 'COM3', baudrate=9600, timeout=0.1)
 
 # Create an MQTT client instance.
 client = MQTTClient(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
@@ -138,4 +138,4 @@ while True:
             client.publish(FEED_ID_Servon3_Recibir, valores[2])
             client.publish(FEED_ID_Servon4_Recibir, valores[3])
 
-    time.sleep(2)
+    time.sleep(3)

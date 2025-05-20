@@ -222,20 +222,31 @@ ISR(ADC_vect)
 	ADCSRA |= (1<<ADSC);
 }
 
-ISR(USART_RX_vect)
+ISR(PCINT1_vect)
 {
-	char uar = UDR0;
-
-	if (uar == 'A') {
+	//Boton para cambio de modo.
+	if (!(PINC & (1<<PINC0)))
+	{
 		modo++;
-		if (modo == 3) {
+		if (modo == 3)
+		{
 			modo = 0;
 		}
 	}
-	else if (uar == 'G') {
-		act = 1;
+	//Boton para acción de guardado
+	else if (!(PINC & (1<<PINC1)))
+	{
+		act++;
+		if (act == 5)
+		{
+			act = 0;
+		}
 	}
+}
 
+ISR(USART_RX_vect)
+{	
+	char uar = UDR0;
 	if (modo == 2) {
 		if (uar == '\n' || uar == '\r') {
 			input_joy[input_index] = '\0';
@@ -273,27 +284,6 @@ ISR(USART_RX_vect)
 		}
 		else if (input_index < MAX_CHAR - 1) {
 			input_joy[input_index++] = uar;
-		}
-	}
-}
-ISR(PCINT1_vect)
-{
-	//Boton para cambio de modo. 
-	if (!(PINC & (1<<PINC0)))
-	{
-		modo++; 
-		if (modo == 3)
-		{
-			modo = 0; 
-		}
-	}
-	//Boton para acción de guardado 
-	else if (!(PINC & (1<<PINC1)))
-	{
-		act++; 
-		if (act == 5)
-		{
-			act = 0; 
 		}
 	}
 }

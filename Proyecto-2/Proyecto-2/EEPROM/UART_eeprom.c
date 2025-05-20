@@ -36,28 +36,28 @@ void stringTermi(char* oracion)
 void valor360(uint16_t num, char* str)
 {
 	   if (num >= 1000) {
-		   *str++ = (num / 1000) + '0';  // Ej: 1023 ? '1'
-		   num %= 1000;                  // 1023 % 1000 = 23
-		   *str++ = (num / 100) + '0';   // 23 / 100 = 0 ? '0'
-		   num %= 100;                   // 23 % 100 = 23
-		   *str++ = (num / 10) + '0';    // 23 / 10 = 2 ? '2'
-		   num %= 10;                    // 23 % 10 = 3
-		   *str++ = num + '0';           // '3'
+		   *str++ = (num / 1000) + '0';  
+		   num %= 1000;                  
+		   *str++ = (num / 100) + '0';   
+		   num %= 100;                   
+		   *str++ = (num / 10) + '0';    
+		   num %= 10;                    
+		   *str++ = num + '0';          
 	   }
 	   else if (num >= 100) {
-		   *str++ = (num / 100) + '0';   // Ej: 512 ? '5'
-		   num %= 100;                   // 512 % 100 = 12
-		   *str++ = (num / 10) + '0';    // 12 / 10 = 1 ? '1'
-		   num %= 10;                    // 12 % 10 = 2
-		   *str++ = num + '0';           // '2'
+		   *str++ = (num / 100) + '0';   
+		   num %= 100;                   
+		   *str++ = (num / 10) + '0';   
+		   num %= 10;                   
+		   *str++ = num + '0';           
 	   }
 	   else if (num >= 10) {
-		   *str++ = (num / 10) + '0';    // Ej: 45 ? '4'
-		   num %= 10;                    // 45 % 10 = 5
-		   *str++ = num + '0';           // '5'
+		   *str++ = (num / 10) + '0';    
+		   num %= 10;                    
+		   *str++ = num + '0';          
 	   }
 	   else {
-		   *str++ = num + '0';           // Ej: 7 ? '7'
+		   *str++ = num + '0';           
 	   }
-	   *str = '\0';  // Terminador nulo
+	   *str = '\0';  
 }
